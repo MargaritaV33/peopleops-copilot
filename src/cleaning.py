@@ -67,6 +67,7 @@ def clean_markdown(text: str) -> str:
 
     text = remove_front_matter(text)
     text = remove_hugo_shortcodes(text)
+    text = remove_html_wrappers(text)
     text = clean_inline_markdown(text)
     text = normalize_whitespace(text)
 
@@ -75,3 +76,16 @@ def clean_markdown(text: str) -> str:
 
 
 from pathlib import Path
+
+
+def remove_html_wrappers(text: str) -> str:
+    """Remove HTML details/summary wrapper tags while preserving inner text."""
+
+    text = re.sub(
+        r"</?(?:details|summary)(?:\s[^>]*)?>",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    return text
