@@ -75,19 +75,3 @@ def clean_markdown(text: str) -> str:
 
 
 from pathlib import Path
-
-
-if __name__ == "__main__":
-    project_root = Path(__file__).resolve().parents[1]
-
-    raw_path = project_root / "data" / "raw" / "time_off_types.md"
-
-    raw_text = raw_path.read_text(encoding="utf-8")
-
-    cleaned_text = clean_markdown(raw_text)
-
-    print("RAW LENGTH:", len(raw_text))
-    print("CLEAN LENGTH:", len(cleaned_text))
-
-    print("\n--- CLEANED PREVIEW ---\n")
-    print(cleaned_text[:2000])
