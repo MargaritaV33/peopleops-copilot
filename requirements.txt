@@ -1,0 +1,9 @@
+python-dotenv
+requests
+chromadb
+sentence-transformers
+rank-bm25
+openai
+streamlit
+pandas
+plotly

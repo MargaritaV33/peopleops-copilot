@@ -216,3 +216,30 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+# -----------------------------
+# PeopleOps Copilot local files
+# -----------------------------
+
+# Environment variables
+.env
+
+# Virtual environment
+peopleops-venv/
+
+# Downloaded policy source documents
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated processed documents
+data/processed/*
+!data/processed/.gitkeep
+
+# Local vector database
+storage/chroma/*
+!storage/chroma/.gitkeep
+
+# Local SQLite databases
+storage/*.db
